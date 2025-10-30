@@ -1,0 +1,14 @@
+description "WebDAV client-side library for U++\377";
+
+uses
+	Core,
+	Core/SSL;
+
+file
+	WebDAV.h,
+	WebDAV.cpp,
+	Docs readonly separator,
+	src.tpp,
+	Info readonly separator,
+	Copying;
+

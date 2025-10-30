@@ -1,0 +1,12 @@
+description "Demonstrate the basic capabilities of WebDAV package\377";
+
+uses
+	Core,
+	WebDAV;
+
+file
+	WebDavExample.cpp;
+
+mainconfig
+	"" = "";
+

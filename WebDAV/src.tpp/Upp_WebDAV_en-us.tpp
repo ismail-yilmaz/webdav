@@ -172,6 +172,14 @@ the resource path, [%-*@3 lock`_token] is the token obtained from
 a Lock operation, and [%-*@3 timeout] is the new lock timeout in 
 seconds.&]
 [s3; &]
+[s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:StartReport`(const String`&`,const String`&`): [@(0.0.255) v
+oid] [* StartReport]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], 
+[@(0.0.255) const] String[@(0.0.255) `&] [*@3 xmlquery])&]
+[s2;%% Starts a WebDAV REPORT operation for complex queries. The 
+[%-*@3 path] parameter specifies the resource path to query. [%-*@3 xmlquery] 
+is the XML payload defining the report type and parameters.&]
+[s3; &]
 [ {{10000F(128)G(128)@1 [s0;%% [* Blocking Methods]]}}&]
 [s3; &]
 [s2; Blocking methods execute immediately and return when the operation 
@@ -309,4 +317,12 @@ ool] [* RefreshLock]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path],
 the resource path, [%-*@3 lock`_token] is the token obtained from 
 a lock operation, and [%-*@3 timeout] is the new lock timeout in 
 seconds. Returns true if successful.&]
-[s0; ]]
+[s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:Report`(const String`&`,const String`&`): String 
+[* Report]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], [@(0.0.255) const] 
+String[@(0.0.255) `&] [*@3 xmlquery])&]
+[s2;%% Performs WebDAV REPORT operation for complex queries. The 
+[%-*@3 path] parameter specifies the resource path to query. [%-*@3 xmlquery] 
+is the XML payload defining the report type and parameters. Returns 
+the XML response containing the report results.&]
+[s3;%% ]]

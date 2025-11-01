@@ -42,6 +42,22 @@ void WebDAVRequest::StartLoadFile(const String& path)
 	Method(HttpRequest::METHOD_GET);
 }
 
+void WebDAVRequest::StartLoadFile(const String& path, String& data)
+{
+	New();
+	Path(path);
+	Method(HttpRequest::METHOD_GET);
+	WhenContent = [&data](const void *out, int size) { data.Cat((const char*) out, size); };
+}
+
+void WebDAVRequest::StartLoadFile(const String& path, Stream& out)
+{
+	New();
+	Path(path);
+	Method(HttpRequest::METHOD_GET);
+	WhenContent = [&out](const void *data, int size) { out.Put(data, size); };
+}
+
 void WebDAVRequest::StartSaveFile(const String& path, const String& data, const String& content_type)
 {
 	New();
@@ -154,6 +170,18 @@ String WebDAVRequest::LoadFile(const String& path)
 {
 	StartLoadFile(path);
 	return Execute();
+}
+
+bool WebDAVRequest::LoadFile(const String& path, String& data)
+{
+	StartLoadFile(path, data);
+	return IsSuccess();
+}
+
+bool WebDAVRequest::LoadFile(const String& path, Stream& out)
+{
+	StartLoadFile(path, out);
+	return IsSuccess();
 }
 
 bool WebDAVRequest::SaveFile(const String& path, const String& data, const String& content_type)

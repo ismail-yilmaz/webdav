@@ -54,6 +54,20 @@ successful completion. Or [^topic`:`/`/Core`/src`/HttpRequest`_en`-us`#HttpReque
 henContent] event can be used to redirect the output.&]
 [s3; &]
 [s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:StartLoadFile`(const String`&`,String`&`): [@(0.0.255) voi
+d] [* StartLoadFile]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], 
+String[@(0.0.255) `&] [*@3 data])&]
+[s2;%% Starts downloading a file from the specified [%-*@3 path]. to 
+[%-*@3 data].&]
+[s3; &]
+[s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:StartLoadFile`(const String`&`,Stream`&`): [@(0.0.255) voi
+d] [* StartLoadFile]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], 
+Stream[@(0.0.255) `&] [*@3 out])&]
+[s2;%% Starts downloading a file from the specified [%-*@3 path]. to 
+[%-*@3 out] stream.&]
+[s3; &]
+[s4; &]
 [s5;:Upp`:`:WebDAVRequest`:`:StartSaveFile`(const String`&`,const String`&`,const String`&`): [@(0.0.255) v
 oid] [* StartSaveFile]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], 
 [@(0.0.255) const] String[@(0.0.255) `&] [*@3 data], [@(0.0.255) const] 
@@ -173,6 +187,22 @@ onst] String[@(0.0.255) `&] [*@3 path])&]
 [s2;%% Downloads a file from the server. The [%-*@3 path] parameter 
 specifies the server path to the file. Returns the file content 
 as a String.&]
+[s3; &]
+[s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:LoadFile`(const String`&`,String`&`): [@(0.0.255) bool] 
+[* LoadFile]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], String[@(0.0.255) `&] 
+[*@3 data])&]
+[s2;%% Downloads a file from the server and stores it in [%-*@3 data]. 
+The [%-*@3 path] parameter specifies the server path to the file. 
+Returns true if successful. &]
+[s3; &]
+[s4; &]
+[s5;:Upp`:`:WebDAVRequest`:`:LoadFile`(const String`&`,Stream`&`): [@(0.0.255) bool] 
+[* LoadFile]([@(0.0.255) const] String[@(0.0.255) `&] [*@3 path], Stream[@(0.0.255) `&] 
+[*@3 out])&]
+[s2;%% Downloads a file from the server and stores it in [%-*@3 out] 
+stream. The [%-*@3 path] parameter specifies the server path to 
+the file. Returns true if successful.&]
 [s3; &]
 [s4; &]
 [s5;:Upp`:`:WebDAVRequest`:`:SaveFile`(const String`&`,const String`&`,const String`&`): [@(0.0.255) b

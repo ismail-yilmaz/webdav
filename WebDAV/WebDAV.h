@@ -15,6 +15,8 @@ public:
 	// Non blocking initializers (use with Do() method)
 	void    StartGetDAVOptions();
 	void    StartLoadFile(const String& path);
+	void    StartLoadFile(const String& path, String& data);
+	void    StartLoadFile(const String& path, Stream& out);
 	void    StartSaveFile(const String& path, const String& data, const String& content_type = "application/octet-stream");
 	void    StartSaveFile(const String& path, Stream& in, const String& content_type = "application/octet-stream");
 	void    StartDelete(const String& path);
@@ -30,6 +32,8 @@ public:
 	// Blocking variants
 	String  GetDAVOptions();
 	String  LoadFile(const String& path);
+	bool    LoadFile(const String& path, String& data);
+	bool    LoadFile(const String& path, Stream& out);
 	bool    SaveFile(const String& path, const String& data, const String& content_type = "application/octet-stream");
 	bool    SaveFile(const String& path, Stream& in, const String& content_type = "application/octet-stream");
 	bool    Delete(const String& path);

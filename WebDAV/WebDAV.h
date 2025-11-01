@@ -28,6 +28,7 @@ public:
 	void    StartLock(const String& path, int timeout = 100, const String& owner = Null, bool exclusive = true);
 	void    StartUnlock(const String& path, const String& lock_token);
 	void    StartRefreshLock(const String& path, const String& lock_token, int timeout = 100);
+	void    StartReport(const String& path, const String& xmlquery);
 	
 	// Blocking variants
 	String  GetDAVOptions();
@@ -45,6 +46,7 @@ public:
 	String  Lock(const String& path, int timeout = 100, const String& owner = Null, bool exclusive = true);
 	bool    Unlock(const String& path, const String& lock_token);
 	bool    RefreshLock(const String& path, const String& lock_token, int timeout = 100);
+	String  Report(const String& path, const String& xmlquery);
 };
 
 }

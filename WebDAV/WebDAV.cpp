@@ -159,6 +159,15 @@ void WebDAVRequest::StartRefreshLock(const String& path, const String& lock_toke
 	Header("Timeout", Format("Second-%d", timeout));
 }
 
+void WebDAVRequest::StartReport(const String& path, const String& xmlquery)
+{
+    New();
+    Path(path);
+    Method(HttpRequest::METHOD_POST, "REPORT");
+    ContentType("application/xml; charset=utf-8");
+    PostData(xmlquery);
+}
+
 String WebDAVRequest::GetDAVOptions()
 {
 	StartGetDAVOptions();
@@ -259,5 +268,11 @@ bool WebDAVRequest::RefreshLock(const String& path, const String& lock_token, in
 	Execute();
 	return IsSuccess();
 }
-	
+
+String WebDAVRequest::Report(const String& path, const String& xmlquery)
+{
+	StartReport(path, xmlquery);
+	return Execute();
+}
+
 }

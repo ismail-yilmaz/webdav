@@ -175,12 +175,14 @@ String WebDAVRequest::LoadFile(const String& path)
 bool WebDAVRequest::LoadFile(const String& path, String& data)
 {
 	StartLoadFile(path, data);
+	Execute();
 	return IsSuccess();
 }
 
 bool WebDAVRequest::LoadFile(const String& path, Stream& out)
 {
 	StartLoadFile(path, out);
+	Execute();
 	return IsSuccess();
 }
 
